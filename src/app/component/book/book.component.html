@@ -1,0 +1,43 @@
+<div *ngIf="allBooks">
+
+
+  <h2 style="color: darkcyan">Books Table</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Published</th>
+      <th>Genre</th>
+      <th>Rating</th>
+      <th>Authors</th>
+    </tr>
+    <tr *ngFor="let book of allBooks">
+      <td>{{ '"' + book.name + '"' }}</td>
+      <td>{{ book.published }}</td>
+      <td>{{ book.genre }}</td>
+      <td>{{ book.rating }}</td>
+      <td>
+        <a *ngFor="let author of book.authors">
+          {{ author.name + ' '}}
+        </a>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <div class="dropdown">
+   <button class="button">Choose genre</button> {{ ' ' + numberByGenre }}
+    <div class="dropdown-content">
+      <a (click)="countByGenre('novel')">novel</a>
+      <a (click)="countByGenre('historical_novel')">historical novel</a>
+      <a (click)="countByGenre('technical')">technical</a>
+      <a (click)="countByGenre('education')">education</a>
+      <a (click)="countByGenre('fantasy')">fantasy</a>
+      <a (click)="countByGenre('crime')">crime</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <button class="button" type="submit" routerLink="">Back</button>
+
+
+</div>

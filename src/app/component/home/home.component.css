@@ -1,0 +1,14 @@
+
+button {
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  margin: 3px;
+}

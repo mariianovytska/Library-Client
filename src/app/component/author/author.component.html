@@ -1,0 +1,27 @@
+<div *ngIf="allAuthors">
+
+  <h2 style="color: darkcyan">Authors Table</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Born</th>
+      <th>Books</th>
+    </tr>
+    <tr *ngFor="let author of allAuthors">
+      <td>{{ author.name }}</td>
+      <td>{{ author.gender }}</td>
+      <td>{{ author.born }}</td>
+      <td>
+        <a *ngFor="let book of author.books">
+          {{ '"' + book.name + '" '}}
+        </a>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <button class="button" type="submit" routerLink="">Back</button>
+  <button class="button" type="submit" (click)="getAuthorsOlder55()">Task2</button>
+  <button class="button" type="submit" (click)="getAuthorsHavingMoreThen1Book()">Task3</button>
+  <button class="button" type="submit" (click)="getAuthorsHavingMaxBooks()">Task4</button>
+</div>
